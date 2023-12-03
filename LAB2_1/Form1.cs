@@ -11,9 +11,9 @@ namespace Lab2_1
             InitializeComponent();
         }
         int arrayIndex = 0;
-        string[] stIDStack = new string[100];
-        string[] stNameStack = new string[100];
-        double[] stPointStack = new double[100];
+        string[] stIDStack = new string[1000];
+        string[] stNameStack = new string[1000];
+        double[] stPointStack = new double[1000];
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
@@ -105,21 +105,35 @@ namespace Lab2_1
                 double sumOfPoint = stPointStack.Sum();
                 double averageBoxTrue = sumOfPoint / (arrayIndex+1);
                 averageBox.Text = averageBoxTrue.ToString();
+                if (arrayIndex == 0)
+                {
+                    stIDMinBox.Text = stIDStack[arrayIndex];
+                    stNameMinBox.Text = stNameStack[arrayIndex];
+                    stPointMinBox.Text = stPointStackMax.ToString();
+                }
                 if (stPointStack[arrayIndex] == stPointStackMax)
                 {
                     stIDMaxBox.Text = stIDStack[arrayIndex];
                     stNameMaxBox.Text = stNameStack[arrayIndex];
                     stPointMaxBox.Text = stPointStackMax.ToString();
-                double min = stPointStack[0];
-                for (int i = 0; i < arrayIndex; i++)
+                }
+                else
                 {
-                    if (stPointStack[i] < min)
-                    {
-                        min = stPointStack[i];
-                        stIDMinBox.Text = stIDStack[i];
-                        stNameMinBox.Text = stNameStack[i];
-                        stPointMinBox.Text = min.ToString();
-                    }
+                    stIDMinBox.Text = stIDStack[arrayIndex];
+                    stNameMinBox.Text = stNameStack[arrayIndex];
+                    stPointMinBox.Text = stPointBoxImport;
+
+                    //double min = stPointStack[0];
+                    //for (int i = 0; i < arrayIndex; i++)
+                    //{
+                    //if (stPointStack[i] < min)
+                    //{
+                    //min = stPointStack[i];
+                    //stIDMinBox.Text = stIDStack[i];
+                    //stNameMinBox.Text = stNameStack[i];
+                    //stPointMinBox.Text = min.ToString();
+                    //}
+                    //}
                 }
                 arrayIndex++;
             }
