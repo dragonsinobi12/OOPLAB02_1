@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Numerics;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -105,6 +107,7 @@ namespace Lab2_1
                 double sumOfPoint = stPointStack.Sum();
                 double averageBoxTrue = sumOfPoint / (arrayIndex+1);
                 averageBox.Text = averageBoxTrue.ToString();
+                //double[] result = stPointStack.Concat(stPointStack).ToArray();
                 if (arrayIndex == 0)
                 {
                     stIDMinBox.Text = stIDStack[arrayIndex];
@@ -117,23 +120,11 @@ namespace Lab2_1
                     stNameMaxBox.Text = stNameStack[arrayIndex];
                     stPointMaxBox.Text = stPointStackMax.ToString();
                 }
-                else
+                if (arrayIndex > 0 && stPointStack[arrayIndex] <= stPointStack[arrayIndex-1])
                 {
                     stIDMinBox.Text = stIDStack[arrayIndex];
                     stNameMinBox.Text = stNameStack[arrayIndex];
                     stPointMinBox.Text = stPointBoxImport;
-
-                    //double min = stPointStack[0];
-                    //for (int i = 0; i < arrayIndex; i++)
-                    //{
-                    //if (stPointStack[i] < min)
-                    //{
-                    //min = stPointStack[i];
-                    //stIDMinBox.Text = stIDStack[i];
-                    //stNameMinBox.Text = stNameStack[i];
-                    //stPointMinBox.Text = min.ToString();
-                    //}
-                    //}
                 }
                 arrayIndex++;
             }
