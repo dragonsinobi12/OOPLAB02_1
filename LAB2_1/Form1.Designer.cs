@@ -37,6 +37,17 @@
             stName = new Label();
             stID = new Label();
             answer = new GroupBox();
+            gpaBox = new TextBox();
+            gpsText = new Label();
+            gABOX = new TextBox();
+            gradeF = new Label();
+            gradeD = new Label();
+            gradeDPlus = new Label();
+            gradeC = new Label();
+            gradeCPlus = new Label();
+            gradeB = new Label();
+            gradeBPlus = new Label();
+            gradeA = new Label();
             averageBox = new TextBox();
             average = new Label();
             stPointMinBox = new TextBox();
@@ -50,6 +61,13 @@
             stPoint2 = new Label();
             stName2 = new Label();
             stID2 = new Label();
+            gBPLUSBOX = new TextBox();
+            gBBOX = new TextBox();
+            gCPLUSBOX = new TextBox();
+            gCBOX = new TextBox();
+            gDPLUSBOX = new TextBox();
+            gDBOX = new TextBox();
+            gFBOX = new TextBox();
             mainInput.SuspendLayout();
             answer.SuspendLayout();
             SuspendLayout();
@@ -134,6 +152,24 @@
             // 
             // answer
             // 
+            answer.Controls.Add(gFBOX);
+            answer.Controls.Add(gDBOX);
+            answer.Controls.Add(gDPLUSBOX);
+            answer.Controls.Add(gCBOX);
+            answer.Controls.Add(gCPLUSBOX);
+            answer.Controls.Add(gBBOX);
+            answer.Controls.Add(gBPLUSBOX);
+            answer.Controls.Add(gpaBox);
+            answer.Controls.Add(gpsText);
+            answer.Controls.Add(gABOX);
+            answer.Controls.Add(gradeF);
+            answer.Controls.Add(gradeD);
+            answer.Controls.Add(gradeDPlus);
+            answer.Controls.Add(gradeC);
+            answer.Controls.Add(gradeCPlus);
+            answer.Controls.Add(gradeB);
+            answer.Controls.Add(gradeBPlus);
+            answer.Controls.Add(gradeA);
             answer.Controls.Add(averageBox);
             answer.Controls.Add(average);
             answer.Controls.Add(stPointMinBox);
@@ -149,14 +185,119 @@
             answer.Controls.Add(stID2);
             answer.Location = new Point(447, 71);
             answer.Name = "answer";
-            answer.Size = new Size(617, 208);
+            answer.Size = new Size(832, 404);
             answer.TabIndex = 1;
             answer.TabStop = false;
             answer.Text = "ผลลัพท์";
+            answer.Enter += answer_Enter;
+            // 
+            // gpaBox
+            // 
+            gpaBox.BackColor = SystemColors.ControlLightLight;
+            gpaBox.Location = new Point(122, 357);
+            gpaBox.Name = "gpaBox";
+            gpaBox.ReadOnly = true;
+            gpaBox.Size = new Size(135, 23);
+            gpaBox.TabIndex = 34;
+            gpaBox.TextChanged += gpaBox_TextChanged;
+            // 
+            // gpsText
+            // 
+            gpsText.AutoSize = true;
+            gpsText.Location = new Point(35, 360);
+            gpsText.Name = "gpsText";
+            gpsText.Size = new Size(51, 15);
+            gpsText.TabIndex = 33;
+            gpsText.Text = "เกรดเฉลี่ย";
+            // 
+            // gABOX
+            // 
+            gABOX.Location = new Point(122, 41);
+            gABOX.Name = "gABOX";
+            gABOX.ReadOnly = true;
+            gABOX.Size = new Size(135, 23);
+            gABOX.TabIndex = 25;
+            // 
+            // gradeF
+            // 
+            gradeF.AutoSize = true;
+            gradeF.Location = new Point(53, 314);
+            gradeF.Name = "gradeF";
+            gradeF.Size = new Size(13, 15);
+            gradeF.TabIndex = 24;
+            gradeF.Text = "F";
+            // 
+            // gradeD
+            // 
+            gradeD.AutoSize = true;
+            gradeD.Location = new Point(54, 272);
+            gradeD.Name = "gradeD";
+            gradeD.Size = new Size(15, 15);
+            gradeD.TabIndex = 23;
+            gradeD.Text = "D";
+            gradeD.Click += gradeD_Click;
+            // 
+            // gradeDPlus
+            // 
+            gradeDPlus.AutoSize = true;
+            gradeDPlus.Location = new Point(53, 232);
+            gradeDPlus.Name = "gradeDPlus";
+            gradeDPlus.Size = new Size(23, 15);
+            gradeDPlus.TabIndex = 22;
+            gradeDPlus.Text = "D+";
+            gradeDPlus.Click += gradeDPlus_Click;
+            // 
+            // gradeC
+            // 
+            gradeC.AutoSize = true;
+            gradeC.Location = new Point(53, 196);
+            gradeC.Name = "gradeC";
+            gradeC.Size = new Size(15, 15);
+            gradeC.TabIndex = 21;
+            gradeC.Text = "C";
+            // 
+            // gradeCPlus
+            // 
+            gradeCPlus.AutoSize = true;
+            gradeCPlus.Location = new Point(53, 160);
+            gradeCPlus.Name = "gradeCPlus";
+            gradeCPlus.Size = new Size(23, 15);
+            gradeCPlus.TabIndex = 20;
+            gradeCPlus.Text = "C+";
+            // 
+            // gradeB
+            // 
+            gradeB.AutoSize = true;
+            gradeB.Location = new Point(55, 122);
+            gradeB.Name = "gradeB";
+            gradeB.Size = new Size(14, 15);
+            gradeB.TabIndex = 19;
+            gradeB.Text = "B";
+            // 
+            // gradeBPlus
+            // 
+            gradeBPlus.AutoSize = true;
+            gradeBPlus.Location = new Point(55, 83);
+            gradeBPlus.Name = "gradeBPlus";
+            gradeBPlus.Size = new Size(22, 15);
+            gradeBPlus.TabIndex = 18;
+            gradeBPlus.Text = "B+";
+            gradeBPlus.Click += gradeBPlus_Click;
+            // 
+            // gradeA
+            // 
+            gradeA.AutoSize = true;
+            gradeA.Location = new Point(55, 44);
+            gradeA.Name = "gradeA";
+            gradeA.Size = new Size(15, 15);
+            gradeA.TabIndex = 17;
+            gradeA.Text = "A";
+            gradeA.Click += label1_Click_4;
             // 
             // averageBox
             // 
-            averageBox.Location = new Point(446, 157);
+            averageBox.BackColor = SystemColors.ControlLightLight;
+            averageBox.Location = new Point(691, 119);
             averageBox.Name = "averageBox";
             averageBox.ReadOnly = true;
             averageBox.Size = new Size(135, 23);
@@ -166,7 +307,7 @@
             // average
             // 
             average.AutoSize = true;
-            average.Location = new Point(320, 160);
+            average.Location = new Point(565, 122);
             average.Name = "average";
             average.Size = new Size(60, 15);
             average.TabIndex = 15;
@@ -175,7 +316,7 @@
             // 
             // stPointMinBox
             // 
-            stPointMinBox.Location = new Point(446, 115);
+            stPointMinBox.Location = new Point(691, 77);
             stPointMinBox.Name = "stPointMinBox";
             stPointMinBox.ReadOnly = true;
             stPointMinBox.Size = new Size(135, 23);
@@ -184,7 +325,7 @@
             // 
             // stNameMinBox
             // 
-            stNameMinBox.Location = new Point(284, 115);
+            stNameMinBox.Location = new Point(529, 77);
             stNameMinBox.Name = "stNameMinBox";
             stNameMinBox.ReadOnly = true;
             stNameMinBox.Size = new Size(135, 23);
@@ -193,7 +334,7 @@
             // 
             // stIDMinBox
             // 
-            stIDMinBox.Location = new Point(121, 115);
+            stIDMinBox.Location = new Point(366, 77);
             stIDMinBox.Name = "stIDMinBox";
             stIDMinBox.ReadOnly = true;
             stIDMinBox.Size = new Size(135, 23);
@@ -202,7 +343,7 @@
             // 
             // stPointMaxBox
             // 
-            stPointMaxBox.Location = new Point(446, 74);
+            stPointMaxBox.Location = new Point(691, 41);
             stPointMaxBox.Name = "stPointMaxBox";
             stPointMaxBox.ReadOnly = true;
             stPointMaxBox.Size = new Size(135, 23);
@@ -210,7 +351,7 @@
             // 
             // stNameMaxBox
             // 
-            stNameMaxBox.Location = new Point(284, 74);
+            stNameMaxBox.Location = new Point(529, 41);
             stNameMaxBox.Name = "stNameMaxBox";
             stNameMaxBox.ReadOnly = true;
             stNameMaxBox.Size = new Size(135, 23);
@@ -219,7 +360,7 @@
             // 
             // stIDMaxBox
             // 
-            stIDMaxBox.Location = new Point(121, 74);
+            stIDMaxBox.Location = new Point(366, 41);
             stIDMaxBox.Name = "stIDMaxBox";
             stIDMaxBox.ReadOnly = true;
             stIDMaxBox.Size = new Size(135, 23);
@@ -228,7 +369,7 @@
             // pointMin
             // 
             pointMin.AutoSize = true;
-            pointMin.Location = new Point(43, 118);
+            pointMin.Location = new Point(288, 80);
             pointMin.Name = "pointMin";
             pointMin.Size = new Size(63, 15);
             pointMin.TabIndex = 9;
@@ -237,7 +378,7 @@
             // pointMax
             // 
             pointMax.AutoSize = true;
-            pointMax.Location = new Point(43, 77);
+            pointMax.Location = new Point(288, 44);
             pointMax.Name = "pointMax";
             pointMax.Size = new Size(62, 15);
             pointMax.TabIndex = 8;
@@ -246,7 +387,7 @@
             // stPoint2
             // 
             stPoint2.AutoSize = true;
-            stPoint2.Location = new Point(493, 41);
+            stPoint2.Location = new Point(731, 11);
             stPoint2.Name = "stPoint2";
             stPoint2.Size = new Size(38, 15);
             stPoint2.TabIndex = 7;
@@ -256,7 +397,7 @@
             // stName2
             // 
             stName2.AutoSize = true;
-            stName2.Location = new Point(317, 41);
+            stName2.Location = new Point(555, 11);
             stName2.Name = "stName2";
             stName2.Size = new Size(63, 15);
             stName2.TabIndex = 7;
@@ -265,18 +406,74 @@
             // stID2
             // 
             stID2.AutoSize = true;
-            stID2.Location = new Point(159, 41);
+            stID2.Location = new Point(397, 11);
             stID2.Name = "stID2";
             stID2.Size = new Size(65, 15);
             stID2.TabIndex = 7;
             stID2.Text = "รหัสนักศึกษา";
             stID2.Click += label1_Click_2;
             // 
+            // gBPLUSBOX
+            // 
+            gBPLUSBOX.Location = new Point(122, 77);
+            gBPLUSBOX.Name = "gBPLUSBOX";
+            gBPLUSBOX.ReadOnly = true;
+            gBPLUSBOX.Size = new Size(135, 23);
+            gBPLUSBOX.TabIndex = 35;
+            // 
+            // gBBOX
+            // 
+            gBBOX.Location = new Point(122, 115);
+            gBBOX.Name = "gBBOX";
+            gBBOX.ReadOnly = true;
+            gBBOX.Size = new Size(135, 23);
+            gBBOX.TabIndex = 36;
+            // 
+            // gCPLUSBOX
+            // 
+            gCPLUSBOX.Location = new Point(122, 156);
+            gCPLUSBOX.Name = "gCPLUSBOX";
+            gCPLUSBOX.ReadOnly = true;
+            gCPLUSBOX.Size = new Size(135, 23);
+            gCPLUSBOX.TabIndex = 37;
+            // 
+            // gCBOX
+            // 
+            gCBOX.Location = new Point(122, 193);
+            gCBOX.Name = "gCBOX";
+            gCBOX.ReadOnly = true;
+            gCBOX.Size = new Size(135, 23);
+            gCBOX.TabIndex = 38;
+            // 
+            // gDPLUSBOX
+            // 
+            gDPLUSBOX.Location = new Point(122, 229);
+            gDPLUSBOX.Name = "gDPLUSBOX";
+            gDPLUSBOX.ReadOnly = true;
+            gDPLUSBOX.Size = new Size(135, 23);
+            gDPLUSBOX.TabIndex = 39;
+            // 
+            // gDBOX
+            // 
+            gDBOX.Location = new Point(122, 269);
+            gDBOX.Name = "gDBOX";
+            gDBOX.ReadOnly = true;
+            gDBOX.Size = new Size(135, 23);
+            gDBOX.TabIndex = 40;
+            // 
+            // gFBOX
+            // 
+            gFBOX.Location = new Point(122, 311);
+            gFBOX.Name = "gFBOX";
+            gFBOX.ReadOnly = true;
+            gFBOX.Size = new Size(135, 23);
+            gFBOX.TabIndex = 41;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1198, 450);
+            ClientSize = new Size(1280, 803);
             Controls.Add(answer);
             Controls.Add(mainInput);
             Name = "Form1";
@@ -312,5 +509,30 @@
         private TextBox stIDMinBox;
         private Label average;
         private TextBox averageBox;
+        private Label gradeA;
+        private Label gradeDPlus;
+        private Label gradeC;
+        private Label gradeCPlus;
+        private Label gradeB;
+        private Label gradeBPlus;
+        private Label gradeD;
+        private TextBox textBox8;
+        private TextBox textBox7;
+        private TextBox textBox6;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox gABOX;
+        private Label gradeF;
+        private TextBox gpaBox;
+        private Label gpsText;
+        private TextBox gBPLUSBOX;
+        private TextBox gBBOX;
+        private TextBox gCPLUSBOX;
+        private TextBox gFBOX;
+        private TextBox gDBOX;
+        private TextBox gDPLUSBOX;
+        private TextBox gCBOX;
     }
 }
